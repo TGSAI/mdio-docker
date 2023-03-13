@@ -1,5 +1,10 @@
 FROM mambaorg/micromamba:1-alpine
 
+LABEL org.opencontainers.image.source=https://github.com/tgsai/mdio-docker
+LABEL org.opencontainers.image.description="MDIO image with all functionality (cloud, distributed, zfp)."
+LABEL org.opencontainers.image.documentation="https://mdio-python.readthedocs.io"
+LABEL org.opencontainers.image.licenses="Apache-2.0"
+
 ARG release
 ARG python=3.10
 ARG dask
