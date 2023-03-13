@@ -38,7 +38,7 @@ jobs:
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
-        if: github.repository == 'mdio/mdio-docker' && github.event_name == 'push'
+        if: github.repository == 'tgsai/mdio-docker' && github.event_name == 'push'
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
