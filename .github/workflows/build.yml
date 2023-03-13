@@ -1,4 +1,4 @@
-name: MDIO and Dask Worker Images
+name: Docker Build
 
 on:
   push:
