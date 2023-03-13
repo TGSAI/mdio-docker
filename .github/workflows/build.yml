@@ -71,7 +71,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ${{ matrix.image.context }}
-          push: ${{ github.repository == 'mdio/mdio-docker' && github.event_name == 'push' }}
+          push: ${{ github.repository == 'tgsai/mdio-docker' && github.event_name == 'push' }}
           platforms: linux/amd64
           tags: ${{ steps.tags.outputs.tags }}
           build-args: |
