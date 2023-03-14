@@ -1,4 +1,4 @@
-FROM mambaorg/micromamba:1-alpine
+FROM mambaorg/micromamba:1-bullseye-slim
 
 LABEL org.opencontainers.image.source=https://github.com/tgsai/mdio-docker
 LABEL org.opencontainers.image.description="MDIO image with all functionality (cloud, distributed, zfp)."
