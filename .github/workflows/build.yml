@@ -23,8 +23,6 @@ jobs:
         image:
           - tag: "ghcr.io/tgsai/mdio"
             context: "./base"
-#          - tag: "ghcr.io/tgsai/mdio-dask-gateway"
-#            context: "./dask-gateway"
 
     steps:
       - name: Checkout
