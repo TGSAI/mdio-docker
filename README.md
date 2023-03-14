@@ -13,4 +13,35 @@
 
 ## Example
 
+Pull the container image like this:
+
+```shell
+docker pull ghcr.io/tgsai/mdio
+```
+
+Then you can execute things like this:
+```shell
+docker run --rm -v $HOST_PATH:$CONTAINER_PATH \
+  mdio segy import \
+    -i $CONTAINER_PATH/seismic.segy \
+    -o $CONTAINER_PATH/seismic.mdio \
+    -loc 181,185 \
+    -names inline,crossline
+```
+where `$HOST_PATH` is a directory you want to mount in the container as 
+`$CONTAINER_PATH`. You can usually make these the same.
+
+If you are in a UNIX based HPC environment, you may want to pass the user id
+and group id. This will create files with the right permissions.
+```shell
+docker run --rm --user $(id -u):$(id -g) -v $HOST_PATH:$CONTAINER_PATH \
+  mdio segy import \
+    -i $CONTAINER_PATH/seismic.segy \
+    -o $CONTAINER_PATH/seismic.mdio \
+    -loc 181,185 \
+    -names inline,crossline
+```
+
+## Developer Environment
+
 TBA
