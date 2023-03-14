@@ -22,4 +22,10 @@ RUN micromamba install -c conda-forge -n base \
     s3fs \
     adlfs \
     zfpy \
+    tini \
     && micromamba clean --all --yes
+
+# See here for why we use this entrypoint
+# https://github.com/mamba-org/micromamba-docker#running-commands-in-dockerfile-within-the-conda-environment
+# Tini is good: https://github.com/krallin/tini/issues/8#issuecomment-146135930
+ENTRYPOINT ["/usr/local/bin/_entrypoint.sh", "tini", "-g", "--", "mdio"]
