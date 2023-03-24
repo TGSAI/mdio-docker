@@ -21,7 +21,7 @@ ARG adlfs=2023.1.0
 ARG zarr=2.14.2
 
 ENV PYTHON_VERSION=${python}
-ENV MDIO_VERSION=${mdio}
+ENV MDIO_VERSION=${release}
 ENV DASK_VERSION=${dask}
 ENV DISTRIBUTED_VERSION=${distributed}
 ENV LZ4_VERSION=${lz4}
