@@ -68,7 +68,7 @@ RUN micromamba install -c conda-forge -n base \
     && find /opt/conda/ -type f,l -name '*.pyc' -delete \
     && find /opt/conda/ -type f,l -name '*.js.map' -delete \
     && find /opt/conda/lib/python*/site-packages/bokeh/server/static -type f,l -name '*.js' -not -name '*.min.js' -delete \
-    && rm -rf /opt/conda/pkgs \
+    && rm -rf /opt/conda/pkgs
 
 # See README for why this entrypoint: https://github.com/mamba-org/micromamba-docker
 # Tini is good: https://github.com/krallin/tini/issues/8#issuecomment-146135930
