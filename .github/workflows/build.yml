@@ -23,6 +23,8 @@ jobs:
         image:
           - tag: "ghcr.io/tgsai/mdio"
             context: "./base"
+          - tag: "ghcr.io/tgsai/mdio-dask"
+            context: "./dask"
 
     steps:
       - name: Checkout
