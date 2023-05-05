@@ -4,7 +4,7 @@
 # Stage 2: Install some system level developer tools
 # Stage 3: Combine Stage 2 + Venv
 
-ARG PYTHON_VERSION=3.10
+ARG PYTHON_VERSION=3.11
 ARG LINUX_DISTRO=slim-bullseye
 
 FROM python:${PYTHON_VERSION}-${LINUX_DISTRO} as venv_base
