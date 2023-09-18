@@ -1,4 +1,4 @@
-FROM mambaorg/micromamba:1-bullseye-slim
+FROM mambaorg/micromamba:1-bookworm-slim
 
 LABEL org.opencontainers.image.source=https://github.com/tgsai/mdio-docker
 LABEL org.opencontainers.image.description="MDIO image with all functionality (cloud, distributed, zfp)."
@@ -6,8 +6,8 @@ LABEL org.opencontainers.image.documentation="https://mdio-python.readthedocs.io
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ARG release
-ARG python=3.10
-ARG dask
+ARG python=3.11
+ARG dask=2023.9.2
 
 ENV MDIO_VERSION=$release
 ENV PYTHON_VERSION=$python
