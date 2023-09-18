@@ -1,4 +1,4 @@
-FROM mambaorg/micromamba:1-bullseye-slim
+FROM mambaorg/micromamba:1-bookworm-slim
 
 LABEL org.opencontainers.image.source=https://github.com/tgsai/mdio-docker
 LABEL org.opencontainers.image.description="MDIO image with no entrypoint for Dask"
@@ -6,19 +6,19 @@ LABEL org.opencontainers.image.documentation="https://mdio-python.readthedocs.io
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ARG release
-ARG python=3.10
-ARG dask=2023.3.1
-ARG distributed=2023.3.1
+ARG python=3.11
+ARG dask=2023.9.2
+ARG distributed=2023.9.2
 ARG lz4=4.3.2
 ARG cloudpickle=2.2.1
-ARG bokeh=2.4.3
+ARG bokeh=3.2.2
 
 # Cloud IO
-ARG gcsfs=2023.3.0
-ARG s3fs=2023.3.0
-ARG adlfs=2023.1.0
+ARG gcsfs=2023.9.1
+ARG s3fs=2023.9.1
+ARG adlfs=2023.9.0
 
-ARG zarr=2.14.2
+ARG zarr=2.16.1
 
 ENV PYTHON_VERSION=${python}
 ENV MDIO_VERSION=${release}
