@@ -7,16 +7,16 @@ LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ARG release
 ARG python=3.11
-ARG dask=2023.9.2
-ARG distributed=2023.9.2
+ARG dask=2023.10.0
+ARG distributed=2023.10.0
 ARG lz4=4.3.2
-ARG cloudpickle=2.2.1
-ARG bokeh=3.2.2
+ARG cloudpickle=3.0.0
+ARG bokeh=3.3.0
 
 # Cloud IO
-ARG gcsfs=2023.9.1
-ARG s3fs=2023.9.1
-ARG adlfs=2023.9.0
+ARG gcsfs=2023.10.0
+ARG s3fs=2023.10.0
+ARG adlfs=2023.10.0
 
 ARG zarr=2.16.1
 
