@@ -6,7 +6,7 @@ LABEL org.opencontainers.image.documentation="https://mdio-python.readthedocs.io
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ARG release
-ARG python=3.11
+ARG python=3.12
 ARG dask=2023.10.0
 
 ENV MDIO_VERSION=$release
