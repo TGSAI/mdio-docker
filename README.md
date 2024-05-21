@@ -54,4 +54,12 @@ docker run --rm --user $(id -u):$(id -g) -v $HOST_PATH:$CONTAINER_PATH \
 
 ## Developer Environment
 
-TBA
+The main [MDIO repository] has a `devcontainer.json` in it. Please use that
+for developing MDIO. No custom container necessary.
+
+If you want to know more about it please read [Development Containers].
+
+They work with VSCode and PyCharm out of the box.
+
+[MDIO Repository]: https://github.com/TGSAI/mdio-python
+[Development Containers]: https://containers.dev/
