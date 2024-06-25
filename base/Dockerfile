@@ -7,7 +7,7 @@ LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ARG release
 ARG python=3.12
-ARG dask=2024.5.1
+ARG dask=2024.6.1
 
 ENV MDIO_VERSION=$release
 ENV PYTHON_VERSION=$python
