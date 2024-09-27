@@ -14,9 +14,9 @@ ARG cloudpickle=3.0.0
 ARG bokeh=3.4.2
 
 # Cloud IO
-ARG gcsfs=2024.6.0
-ARG s3fs=2024.6.0
-ARG adlfs=2024.4.1
+ARG gcsfs=2024.9.0.post1
+ARG s3fs=2024.9.0
+ARG adlfs=2024.7.0
 
 ARG zarr=2.18.2
 
