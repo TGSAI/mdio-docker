@@ -11,7 +11,7 @@ ARG dask=2024.8.0
 ARG distributed=2024.8.0
 ARG lz4=4.3.3
 ARG cloudpickle=3.1.0
-ARG bokeh=3.4.2
+ARG bokeh=3.4.3
 
 # Cloud IO
 ARG gcsfs=2024.10.0
