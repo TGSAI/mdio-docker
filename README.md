@@ -34,7 +34,7 @@ docker run --rm -v $HOST_PATH:$CONTAINER_PATH \
     $CONTAINER_PATH/seismic.segy \
     $CONTAINER_PATH/seismic.mdio \
     -loc 181,185 \
-    -names inline, crossline
+    -names inline,crossline
 ```
 
 where `$HOST_PATH` is a directory you want to mount in the container as
