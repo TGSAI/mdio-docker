@@ -1,4 +1,4 @@
-FROM mambaorg/micromamba:1-bookworm-slim
+FROM mambaorg/micromamba:2-debian12-slim
 
 LABEL org.opencontainers.image.source=https://github.com/tgsai/mdio-docker
 LABEL org.opencontainers.image.description="MDIO image with no entrypoint for Dask"
