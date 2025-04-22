@@ -4,8 +4,8 @@
 
 | Image                     | Description                                    | Versions                                                                                                                                                                                                                                             |
 | ------------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ghcr.io/tgsai/mdio`      | Base image to use MDIO with full functionality | [![][tgsai-mdio-latest] ![][tgsai-mdio-release] <br/> ![][tgsai-mdio-py312-release] <br/> ![][tgsai-mdio-py311-release] <br/> ![][tgsai-mdio-py310-release]](https://github.com/tgsai/mdio-docker/pkgs/container/mdio)                               |
-| `ghcr.io/tgsai/mdio-dask` | Dask image to use MDIO in Dask Distributed     | [![][tgsai-mdio-dask-latest] ![][tgsai-mdio-dask-release] <br/> ![][tgsai-mdio-dask-py312-release] <br/> ![][tgsai-mdio-dask-py311-release] <br/> ![][tgsai-mdio-dask-py310-release]](https://github.com/tgsai/mdio-docker/pkgs/container/mdio-dask) |
+| `ghcr.io/tgsai/mdio`      | Base image to use MDIO with full functionality | [![][tgsai-mdio-latest] ![][tgsai-mdio-release] <br/> ![][tgsai-mdio-py313-release] <br/> ![][tgsai-mdio-py312-release] <br/> ![][tgsai-mdio-py311-release]](https://github.com/tgsai/mdio-docker/pkgs/container/mdio)                               |
+| `ghcr.io/tgsai/mdio-dask` | Dask image to use MDIO in Dask Distributed     | [![][tgsai-mdio-dask-latest] ![][tgsai-mdio-dask-release] <br/> ![][tgsai-mdio-dask-py313-release] <br/> ![][tgsai-mdio-dask-py312-release] <br/> ![][tgsai-mdio-dask-py311-release]](https://github.com/tgsai/mdio-docker/pkgs/container/mdio-dask) |
 
 [tgsai-mdio-latest]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-latest-purple
 [tgsai-mdio-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-0.9.0-purple
@@ -34,7 +34,7 @@ docker run --rm -v $HOST_PATH:$CONTAINER_PATH \
     $CONTAINER_PATH/seismic.segy \
     $CONTAINER_PATH/seismic.mdio \
     -loc 181,185 \
-    -names inline,crossline
+    -names inline, crossline
 ```
 
 where `$HOST_PATH` is a directory you want to mount in the container as
