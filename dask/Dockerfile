@@ -6,19 +6,19 @@ LABEL org.opencontainers.image.documentation="https://mdio-python.readthedocs.io
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ARG release
-ARG python=3.12
-ARG dask=2025.2.0
-ARG distributed=2025.2.0
+ARG python=3.13
+ARG dask=2025.3.0
+ARG distributed=2025.3.0
 ARG lz4=4.3.3
 ARG cloudpickle=3.1.1
-ARG bokeh=3.6.3
+ARG bokeh=3.7.2
 
 # Cloud IO
-ARG gcsfs=2025.3.0
-ARG s3fs=2025.3.0
+ARG gcsfs=2025.3.2
+ARG s3fs=2025.3.2
 ARG adlfs=2024.12.0
 
-ARG zarr=2.18.3
+ARG zarr=3.0.7
 
 ENV PYTHON_VERSION=${python}
 ENV MDIO_VERSION=${release}
