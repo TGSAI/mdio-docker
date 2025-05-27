@@ -18,7 +18,7 @@ ARG gcsfs=2025.3.2
 ARG s3fs=2025.3.2
 ARG adlfs=2024.12.0
 
-ARG zarr=3.0.6
+ARG zarr=3.0.8
 
 ENV PYTHON_VERSION=${python}
 ENV MDIO_VERSION=${release}

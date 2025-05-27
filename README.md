@@ -8,15 +8,15 @@
 | `ghcr.io/tgsai/mdio-dask` | Dask image to use MDIO in Dask Distributed     | [![][tgsai-mdio-dask-latest] ![][tgsai-mdio-dask-release] <br/> ![][tgsai-mdio-dask-py313-release] <br/> ![][tgsai-mdio-dask-py312-release] <br/> ![][tgsai-mdio-dask-py311-release]](https://github.com/tgsai/mdio-docker/pkgs/container/mdio-dask) |
 
 [tgsai-mdio-latest]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-latest-purple
-[tgsai-mdio-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-0.9.1-purple
-[tgsai-mdio-py311-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-0.9.1--py3.11-purple
-[tgsai-mdio-py312-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-0.9.1--py3.12-purple
-[tgsai-mdio-py313-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-0.9.1--py3.13-purple
+[tgsai-mdio-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-0.9.2-purple
+[tgsai-mdio-py311-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-0.9.2--py3.11-purple
+[tgsai-mdio-py312-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-0.9.2--py3.12-purple
+[tgsai-mdio-py313-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-0.9.2--py3.13-purple
 [tgsai-mdio-dask-latest]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-latest-purple
-[tgsai-mdio-dask-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-0.9.1-purple
-[tgsai-mdio-dask-py311-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-0.9.1--py3.11-purple
-[tgsai-mdio-dask-py312-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-0.9.1--py3.12-purple
-[tgsai-mdio-dask-py313-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-0.9.1--py3.13-purple
+[tgsai-mdio-dask-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-0.9.2-purple
+[tgsai-mdio-dask-py311-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-0.9.2--py3.11-purple
+[tgsai-mdio-dask-py312-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-0.9.2--py3.12-purple
+[tgsai-mdio-dask-py313-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-0.9.2--py3.13-purple
 
 ## Example
 
