@@ -1,5 +1,23 @@
+# MDIO Docker Build Workflow
+#
+# This workflow builds multi-architecture Docker images for MDIO (Multi-Dimensional I/O)
+# supporting both Intel/AMD (x86_64) and ARM64 (Apple Silicon, AWS Graviton) platforms.
+#
+# Key Features:
+# - Multi-architecture builds (linux/amd64, linux/arm64)
+# - Multiple Python versions (3.11, 3.12, 3.13)
+# - Two image variants: base (full functionality) and dask (distributed computing)
+# - Supply chain security with provenance attestations
+# - Automatic tagging for releases and development builds
+#
+# Images are published to GitHub Container Registry (ghcr.io)
+
 name: Docker Build
 
+# Trigger Conditions:
+# - Push to main branch: builds development images (dev tags)
+# - Push tags: builds release images (latest and versioned tags)  
+# - Pull requests: builds images for testing (no push to registry)
 on:
   push:
     branches:
@@ -12,14 +30,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    # Environment Variables
+    # - release: Current MDIO version for stable releases
+    # - defaultpython: Default Python version for unversioned tags (latest, dev)
     env:
       release: "0.9.3"
       defaultpython: "3.13"
 
+    # Build Matrix Strategy
+    # Creates builds for all combinations of Python versions and image types
+    # fail-fast: false ensures all combinations are attempted even if one fails
     strategy:
       fail-fast: false
       matrix:
+        # Python versions to support - matches MDIO's supported versions
         python: ["3.11", "3.12", "3.13"]
+        # Image variants:
+        # - base: Full MDIO functionality with cloud I/O, ZFP compression
+        # - dask: Specialized for Dask distributed computing (no default entrypoint)
         image:
           - tag: "ghcr.io/tgsai/mdio"
             context: "./base"
@@ -27,15 +55,28 @@ jobs:
             context: "./dask"
 
     steps:
+      # Step 1: Checkout source code
       - name: Checkout
         uses: actions/checkout@v3
 
+      # Step 2: Set up QEMU for multi-architecture emulation
+      # QEMU enables building ARM64 images on x86_64 GitHub runners
+      # Required for cross-platform builds (linux/amd64 -> linux/arm64)
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
+      # Step 3: Set up Docker Buildx for advanced build features
+      # Buildx provides:
+      # - Multi-architecture build support
+      # - Build caching capabilities
+      # - Advanced output options
+      # - Supply chain security features (provenance, SBOM)
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      # Step 4: Authenticate with GitHub Container Registry
+      # Only runs on pushes to the main repository (not forks or PRs)
+      # Uses GitHub's built-in GITHUB_TOKEN for authentication
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         if: github.repository == 'tgsai/mdio-docker' && github.event_name == 'push'
@@ -44,6 +85,18 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # Step 5: Generate Docker image tags
+      # Complex tagging strategy to support both stable releases and development builds
+      # 
+      # For STABLE RELEASES (git tags):
+      #   - ghcr.io/tgsai/mdio:0.9.3-py3.11 (version + python)
+      #   - ghcr.io/tgsai/mdio:latest-py3.11 (latest + python)
+      #   - ghcr.io/tgsai/mdio:latest (only for default python version)
+      #   - ghcr.io/tgsai/mdio:0.9.3 (only for default python version)
+      #
+      # For DEVELOPMENT BUILDS (main branch):
+      #   - ghcr.io/tgsai/mdio:dev-py3.11 (dev + python)
+      #   - ghcr.io/tgsai/mdio:dev (only for default python version)
       - name: Generate tags
         id: tags
         env:
@@ -52,32 +105,65 @@ jobs:
           stable: ${{ startsWith(github.ref, 'refs/tags') }}
         run: |
           if [ "$stable" == "true" ]; then
+            # Stable release tagging
             tag="${image}:${release}-py${python}"
             tags=${image}:latest-py${python},$tag
             if [ "$python" == "$defaultpython" ]; then
+              # Add unversioned tags only for default Python version
               tags=${image}:latest,${image}:${release},$tags
             fi
           else
+            # Development build tagging
             tag="${image}:dev-py${python}"
             tags=$tag
             if [ "$python" == "$defaultpython" ]; then
+              # Add unversioned dev tag only for default Python version
               tags=${image}:dev,$tags
             fi
           fi
           echo "::set-output name=tags::${tags}"
           echo "::set-output name=tag::${tag}"
 
+      # Step 6: Build and push Docker images
+      # This is the core build step with sophisticated multi-architecture support
+      # and supply chain security features. Configuration choices were made to
+      # resolve platform metadata issues encountered in previous iterations.
       - name: Build and push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v5  # v5 has improved multi-arch + provenance support
         with:
+          # Build context (./base or ./dask directory)
           context: ${{ matrix.image.context }}
+          
+          # Only push to registry on pushes to main repo (not PRs or forks)
           push: ${{ github.repository == 'tgsai/mdio-docker' && github.event_name == 'push' }}
+          
+          # Multi-architecture support for Intel/AMD and ARM64 platforms
+          # Supports: macOS Apple Silicon, AWS Graviton, traditional x86_64
           platforms: linux/amd64,linux/arm64
+          
+          # Generated tags from previous step
           tags: ${{ steps.tags.outputs.tags }}
-          provenance: true
+          
+          # IMPORTANT: Explicit registry output prevents "unknown/unknown" platform metadata
+          # This was added to fix ARM64 images showing incorrect platform in GitHub Container Registry
+          outputs: type=registry
+          
+          # Supply Chain Security Configuration:
+          # - provenance: mode=max provides cryptographic build attestations while maintaining
+          #   proper platform metadata (replaces previous "provenance: false" workaround)
+          # - sbom: false disables Software Bill of Materials to prevent manifest conflicts
+          #   with multi-architecture builds (can interfere with platform-specific manifests)
+          provenance: mode=max
+          sbom: false
+          
+          # Build arguments passed to Dockerfiles
+          # - python: Python version from build matrix (3.11, 3.12, 3.13)
+          # - release: MDIO version for package installation
           build-args: |
             python=${{ matrix.python }}
             release=${{ env.release }}
 
+      # Step 7: Report successful build
+      # Simple confirmation of which tags were built
       - name: Report
         run: echo Built ${{ steps.tags.outputs.tags }}
