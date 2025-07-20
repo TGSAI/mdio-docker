@@ -86,10 +86,6 @@ jobs:
           tags: ${{ steps.tags.outputs.tags }}
           # Explicit registry output prevents "unknown/unknown" platform metadata
           outputs: type=registry
-          # provenance: mode=max maintains proper platform metadata
-          # sbom: false prevents manifest conflicts with multi-arch builds
-          provenance: mode=max
-          sbom: false
           build-args: |
             python=${{ matrix.python }}
             release=${{ env.release }}
