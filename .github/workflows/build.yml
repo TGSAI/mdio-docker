@@ -72,7 +72,7 @@ jobs:
         with:
           context: ${{ matrix.image.context }}
           push: ${{ github.repository == 'tgsai/mdio-docker' && github.event_name == 'push' }}
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           tags: ${{ steps.tags.outputs.tags }}
           build-args: |
             python=${{ matrix.python }}

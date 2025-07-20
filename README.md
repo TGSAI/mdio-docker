@@ -2,6 +2,14 @@
 
 [![Docker Build](https://github.com/TGSAI/mdio-docker/actions/workflows/build.yml/badge.svg)](https://github.com/TGSAI/mdio-docker/actions/workflows/build.yml)
 
+## Architecture Support
+
+These Docker images are built for multiple architectures:
+- **linux/amd64** - Intel/AMD x86_64 processors
+- **linux/arm64** - ARM64 processors including Apple Silicon (M1/M2/M3/M4) and AWS Graviton
+
+Docker will automatically pull the correct image for your platform.
+
 | Image                     | Description                                    | Versions                                                                                                                                                                                                                                             |
 | ------------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ghcr.io/tgsai/mdio`      | Base image to use MDIO with full functionality | [![][tgsai-mdio-latest] ![][tgsai-mdio-release] <br/> ![][tgsai-mdio-py313-release] <br/> ![][tgsai-mdio-py312-release] <br/> ![][tgsai-mdio-py311-release]](https://github.com/tgsai/mdio-docker/pkgs/container/mdio)                               |
