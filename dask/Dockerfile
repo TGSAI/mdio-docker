@@ -11,14 +11,14 @@ ARG dask=2025.7.0
 ARG distributed=2025.7.0
 ARG lz4=4.3.3
 ARG cloudpickle=3.1.1
-ARG bokeh=3.7.3
+ARG bokeh=3.8.0
 
 # Cloud IO
-ARG gcsfs=2025.7.0
-ARG s3fs=2025.7.0
-ARG adlfs=2024.12.0
+ARG gcsfs=2025.9.0
+ARG s3fs=2025.9.0
+ARG adlfs=2025.8.0
 
-ARG zarr=3.1.0
+ARG zarr=3.1.2
 
 ENV PYTHON_VERSION=${python}
 ENV MDIO_VERSION=${release}
