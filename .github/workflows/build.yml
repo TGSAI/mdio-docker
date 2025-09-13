@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      release: "1.0.0"
+      release: "1.0.1"
       defaultpython: "3.13"
 
     strategy:
