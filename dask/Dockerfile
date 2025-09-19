@@ -7,8 +7,8 @@ LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ARG release
 ARG python=3.13
-ARG dask=2025.7.0
-ARG distributed=2025.7.0
+ARG dask=2025.9.0
+ARG distributed=2025.9.0
 ARG lz4=4.3.3
 ARG cloudpickle=3.1.1
 ARG bokeh=3.8.0
