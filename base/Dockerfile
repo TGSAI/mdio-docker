@@ -7,11 +7,22 @@ LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ARG release
 ARG python=3.13
-ARG dask=2025.10.0
+ARG dask=2025.12.0
+
+# Cloud IO
+ARG gcsfs=2025.9.0
+ARG s3fs=2025.9.0
+ARG adlfs=2025.8.0
+
+ARG zarr=3.2.1
 
 ENV MDIO_VERSION=$release
 ENV PYTHON_VERSION=$python
 ENV DASK_VERSION=$dask
+ENV GCSFS_VERSION=$gcsfs
+ENV S3FS_VERSION=$s3fs
+ENV ADLFS_VERSION=$adlfs
+ENV ZARR_VERSION=$zarr
 
 # Rename mambauser to mdiouser
 # See README for explanation: https://github.com/mamba-org/micromamba-docker
@@ -36,9 +47,10 @@ RUN micromamba install -c conda-forge -n base \
     multidimio=$MDIO_VERSION \
     dask-core=$DASK_VERSION \
     distributed=$DASK_VERSION \
-    gcsfs \
-    s3fs \
-    adlfs \
+    gcsfs=$GCSFS_VERSION \
+    s3fs=$S3FS_VERSION \
+    adlfs=$ADLFS_VERSION \
+    zarr=$ZARR_VERSION \
     zfpy \
     tini \
     && micromamba clean --all --yes

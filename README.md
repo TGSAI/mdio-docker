@@ -12,19 +12,17 @@ Docker will automatically pull the correct image for your platform.
 
 | Image                     | Description                                    | Versions                                                                                                                                                                                                                                             |
 | ------------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ghcr.io/tgsai/mdio`      | Base image to use MDIO with full functionality | [![][tgsai-mdio-latest] ![][tgsai-mdio-release] <br/> ![][tgsai-mdio-py313-release] <br/> ![][tgsai-mdio-py312-release] <br/> ![][tgsai-mdio-py311-release]](https://github.com/tgsai/mdio-docker/pkgs/container/mdio)                               |
-| `ghcr.io/tgsai/mdio-dask` | Dask image to use MDIO in Dask Distributed     | [![][tgsai-mdio-dask-latest] ![][tgsai-mdio-dask-release] <br/> ![][tgsai-mdio-dask-py313-release] <br/> ![][tgsai-mdio-dask-py312-release] <br/> ![][tgsai-mdio-dask-py311-release]](https://github.com/tgsai/mdio-docker/pkgs/container/mdio-dask) |
+| `ghcr.io/tgsai/mdio`      | Base image to use MDIO with full functionality | [![][tgsai-mdio-latest] ![][tgsai-mdio-release] <br/> ![][tgsai-mdio-py313-release] <br/> ![][tgsai-mdio-py312-release]](https://github.com/tgsai/mdio-docker/pkgs/container/mdio)                               |
+| `ghcr.io/tgsai/mdio-dask` | Dask image to use MDIO in Dask Distributed     | [![][tgsai-mdio-dask-latest] ![][tgsai-mdio-dask-release] <br/> ![][tgsai-mdio-dask-py313-release] <br/> ![][tgsai-mdio-dask-py312-release]](https://github.com/tgsai/mdio-docker/pkgs/container/mdio-dask) |
 
 [tgsai-mdio-latest]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-latest-purple
-[tgsai-mdio-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-1.1.2-purple
-[tgsai-mdio-py311-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-1.1.2--py3.11-purple
-[tgsai-mdio-py312-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-1.1.2--py3.12-purple
-[tgsai-mdio-py313-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-1.1.2--py3.13-purple
+[tgsai-mdio-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-1.2.0-purple
+[tgsai-mdio-py312-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-1.2.0--py3.12-purple
+[tgsai-mdio-py313-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio-1.2.0--py3.13-purple
 [tgsai-mdio-dask-latest]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-latest-purple
-[tgsai-mdio-dask-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-1.1.2-purple
-[tgsai-mdio-dask-py311-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-1.1.2--py3.11-purple
-[tgsai-mdio-dask-py312-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-1.1.2--py3.12-purple
-[tgsai-mdio-dask-py313-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-1.1.2--py3.13-purple
+[tgsai-mdio-dask-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-1.2.0-purple
+[tgsai-mdio-dask-py312-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-1.2.0--py3.12-purple
+[tgsai-mdio-dask-py313-release]: https://img.shields.io/badge/ghcr.io%2Ftgsai%2Fmdio--dask-1.2.0--py3.13-purple
 
 ## Example
 

@@ -13,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      release: "1.1.2"
+      release: "1.2.0"
       defaultpython: "3.13"
 
     strategy:
       fail-fast: false
       matrix:
-        python: ["3.11", "3.12", "3.13"]
+        python: ["3.12", "3.13"]
         image:
           - tag: "ghcr.io/tgsai/mdio"
             context: "./base"
